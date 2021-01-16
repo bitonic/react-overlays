@@ -182,9 +182,7 @@ function usePopper(
       strategy,
       modifiers: [...modifiers, updateModifier, disabledApplyStylesModifier],
     });
-    // intentionally NOT re-running on new modifiers
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [strategy, placement, updateModifier, enabled]);
+  }, [strategy, placement, modifiers, updateModifier, enabled]);
 
   useEffect(() => {
     if (!enabled || referenceElement == null || popperElement == null) {
